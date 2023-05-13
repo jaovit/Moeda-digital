@@ -1,32 +1,48 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="reset.css">
     <script src="main.js" defer></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
     <title>Moeda digital</title>
 </head>
 
 <body>
-
-    <div class="inicio">
-        <h1>Inicio:</h1>
-        <label for="nome">Nome:</label>
+    <section class="inicio">
+        <gambiarra class="borda"></gambiarra>
+        <h1>Inicio</h1>
+        <label for="nome" class="nm">Nome do jovem:</label>
         <input type="text" id="nome">
-        <section class="botoes">
-            <input type="button" value="Luiz" class="facil" onclick="dif(1)">
-            <input type="button" value="Médio" class="medio" onclick="dif(2)">
-            <input type="button" value="dificil" class="dificil" onclick="dif(3)">
-        </section>
-    </div>
 
-    <div class="quest">a
+        <fieldset class="botoes">
+            <legend class="ed"> Escolha a dificuldade: </legend>
+
+            <input type="radio" name="dif" value="Luiz" id="facil" onclick="difi = 20">
+            <label for="facil" class="facil"> <h1>Luiz</h1> </label>
+
+            <input type="radio" name="dif"value="Médio" id="medio" onclick="difi = 60" checked>
+            <label for="medio" class="medio"> <h1> Médio </h1></label>
+
+            <input type="radio" name="dif" value="dificil" id="dificil" onclick="difi = 60">
+            <label for="dificil" class="dificil"><h1> Dificil </h1></label>
+
+        </fieldset>
+        <input type="button" value="Start" id="start" onclick="pergunta()">
+    </section>
+
+
+    <section class="quest">
+
         <h1>Responda:</h1>
         <p>pergunta</p>
-        <section class="opcoes">
+        <div class="opcoes">
             <label for="a">A</label>
             <input type="button" value="a" id="a" onclick="res(1)">
 
@@ -38,12 +54,24 @@
 
             <label for="d">D</label>
             <input type="button" value="d" id="d" onclick="res(4)">
-        </section>
-    </div>
+        </div>
+    </section>
 
-    <div class="resultdo">
-    </div>
+    <section class="resultdo">
+        <table id="table">
+            <thead>
+                <th>Jovem</th>
+                <th>Pontuação</th>
+                <th>slacoins</th>
+            </thead>
+            <tbody id="tbody">
+            </tbody>
+        </table>
 
+        <div class="reniciar">
+            <input type="button" value="reniciar" id="reniciar" onclick="reset()">
+        </div>
+    </section>
 </body>
 
 </html>
