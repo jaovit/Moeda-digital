@@ -1,35 +1,10 @@
+
 var acertos = 0;
 var npergunta = 5;
 var difi = 60;
 var stent = false;
 var pergunt;
 
-// perguntas:
-var quest_m = [
-    { ptexto: 'sla', opcoes: ['sla', 'sa', 'al', 'sal'], resposta: 'sla' },
-
-    { ptexto: 'sla2', opcoes: ['sla2', 'sa', 'al', 'sal'], resposta: 'sla2' },
-
-    { ptexto: 'sla3', opcoes: ['sla3', 'sa', 'al', 'sal'], resposta: 'sla3' },
-
-    { ptexto: 'sla3', opcoes: ['sla4', 'sa', 'al', 'sal'], resposta: 'sla4' },
-    
-    { ptexto: 'sla3', opcoes: ['sla5', 'sa', 'al', 'sal'], resposta: 'sla5' },
-]
-
-var quest_l = [
-    { ptexto: 'sla', opcoes: ['sla', 'sa', 'al', 'sal'], resposta: 'sla' },
-
-    { ptexto: 'sla2', opcoes: ['sla2', 'sa', 'al', 'sal'], resposta: 'sla2' },
-
-    { ptexto: 'sla3', opcoes: ['sla3', 'sa', 'al', 'sal'], resposta: 'sla3' },
-
-    { ptexto: 'sla3', opcoes: ['sla4', 'sa', 'al', 'sal'], resposta: 'sla4' },
-    
-    { ptexto: 'sla3', opcoes: ['sla5', 'sa', 'al', 'sal'], resposta: 'sla5' },
-]
-   
-// cabo.
 // setTimeout(minhaFuncao, 1000);
 
 var gambiarra_m = quest_m;
