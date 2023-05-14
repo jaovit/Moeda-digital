@@ -53,7 +53,7 @@
     font-size: 1vw;
     font-weight: 500;
     background: rgb(0, 0, 0);
-    border:none;
+    border: solid .075vw rgb(204, 0, 255);
     border-radius: .35vw;
 }
 
