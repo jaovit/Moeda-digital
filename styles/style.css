@@ -1,4 +1,5 @@
-@import url(styles/inicio.css);
+@import url(inicio.css);
+@import url(reset.css);
 
 html {
     overflow: hidden;
