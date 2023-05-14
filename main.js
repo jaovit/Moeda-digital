@@ -1,33 +1,29 @@
 var acertos = 0;
 var npergunta = 5;
-var rcerta = 0;
 var difi = 60;
+var stent = false;
 
 // perguntas:
-   var  p1 = {
-    quest: 'cavalo',
-    op_erradas: ['cachorro', 'sla', 'sla2'],
-    op_certa: 'cavalo',
-   }
+var quest_m = [
+    { ptexto: 'sla', opcoes: ['sla', 'sa', 'al', 'sal'], resposta: 0 },
 
-   var p2 = {
-    quest: 'cachorro',
-    op_erradas: ['sla1','sla4','ssl5'],
-    op_certa: 'cachorro'
-   }
-// cabo. (20 questoes)
+    { ptexto: 'sla2', opcoes: ['sla2', 'sa', 'al', 'sal'], resposta: 0 },
 
-// var n = document.querySelector("#nome").value; por algum  motivo nn funciona usa o query sla doq;
+    { ptexto: 'sla3',opcoes: ['sla3', 'sa', 'al', 'sal'], resposta: 0 },
+]
 
-function res(resposta) {
-    if (resposta == rcerta) {
-        acertos++;
-        console.log("acertou")
-    } else {
-        console.log("errou")
-    }
-    pergunta()
-};
+var quest_l = [
+    { ptexto: 'sla', opcoes: ['sla', 'sa', 'al', 'sal'], resposta: 0 },
+
+    { ptexto: 'sla2', opcoes: ['sla2', 'sa', 'al', 'sal'], resposta: 0 },
+
+    { ptexto: 'sla3', opcoes: ['sla3', 'sa', 'al', 'sal'], resposta: 0 },
+]
+// cabo.
+// setTimeout(minhaFuncao, 1000);
+
+var gambiarra_m = quest_m;
+var gambiarra_l = quest_l;
 
 function pergunta() {
     if (npergunta == 0) {
@@ -36,20 +32,61 @@ function pergunta() {
     }
     npergunta--;
 
-    var ranp = Math.round(Math.random() * difi);
-    if (difi  = 60) {
-        
-    } else{
-        //perguntas nivel luiz
+    if (difi == 60) {
+        var pergunt = gambiarra_m[Math.floor(Math.random() * gambiarra_m.length)];
+        gambiarra_m.splice(gambiarra_m.indexOf(pergunt))
     }
+    else {
+        var pergunt = gambiarra_l[Math.floor(Math.random() * gambiarra_l.length)];
+       gambiarra_l.splice(gambiarra_l.indexOf(pergunt))
+    };
+    document.getElementById("quest").innerHTML = pergunt.ptexto;
+
+    var resp = pergunt.resposta;
+    pergunt.opcoes = shuffle(pergunt.opcoes);
+
+    document.getElementById("a").value = pergunt.opcoes[0];
+    document.getElementById("b").value = pergunt.opcoes[1];
+    document.getElementById("c").value = pergunt.opcoes[2];
+    document.getElementById("d").value = pergunt.opcoes[3];
+};
+
+function shuffle(array) {
+    for (let i = array.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [array[i], array[j]] = [array[j], array[i]];
+    }
+    return array;
 }
+
+function res(rel) {
+    if (rel == resp) {
+        acertos++;
+        console.log("acertou")
+    } else {
+        console.log("errou")
+    }
+    pergunta()
+};
+
+function iniciar() {
+    if (stent == false) {
+        // stytles do inicio
+    }
+    pergunta();
+    // styles da quest;
+};
 
 function fim() {
 
-}
+};
 
 function reset() {
     npergunta = 5;
     acertos = 0;
     difi = 0;
-}
+    stent = true;
+    gambiarra_m = quest_m;
+    gambiarra_l = quest_l;
+    iniciar();
+};

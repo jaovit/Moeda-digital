@@ -5,8 +5,8 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="reset.css">
+    <link rel="stylesheet" href="styles/style.css">
+    <link rel="stylesheet" href="styles/reset.css">
     <script src="main.js" defer></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -34,26 +34,26 @@
             <label for="dificil" class="dificil"><h1> Dificil </h1></label>
 
         </fieldset>
-        <input type="button" value="Start" id="start" onclick="pergunta()">
+        <input type="button" value="Start" id="start" onclick="iniciar()">
     </section>
 
 
     <section class="quest">
 
         <h1>Responda:</h1>
-        <p>pergunta</p>
+        <p id="quest">pergunta</p>
         <div class="opcoes">
             <label for="a">A</label>
-            <input type="button" value="a" id="a" onclick="res(1)">
+            <input type="button" value="a" id="a" onclick='res(document.getElementById("a").value)'>
 
             <label for="b">B</label>
-            <input type="button" value="b" id="b" onclick="res(2)">
+            <input type="button" value="b" id="b" onclick='res(document.getElementById("b").value)'>
 
             <label for="c">C</label>
-            <input type="button" value="c" id="c" onclick="res(3)">
+            <input type="button" value="c" id="c" onclick='res(document.getElementById("c").value)'>
 
             <label for="d">D</label>
-            <input type="button" value="d" id="d" onclick="res(4)">
+            <input type="button" value="d" id="d" onclick='res(document.getElementById("d").value)'>
         </div>
     </section>
 
