@@ -2,6 +2,7 @@ var acertos = 0;
 var npergunta = 5;
 var difi = 60;
 var stent = false;
+var resp;
 
 // perguntas:
 var quest_m = [
@@ -42,7 +43,7 @@ function pergunta() {
     };
     document.getElementById("quest").innerHTML = pergunt.ptexto;
 
-    var resp = pergunt.resposta;
+    resp = pergunt.resposta;
     pergunt.opcoes = shuffle(pergunt.opcoes);
 
     document.getElementById("a").value = pergunt.opcoes[0];
