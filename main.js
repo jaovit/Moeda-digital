@@ -2,24 +2,33 @@ var acertos = 0;
 var npergunta = 5;
 var difi = 60;
 var stent = false;
-var resp;
+var pergunt;
 
 // perguntas:
 var quest_m = [
-    { ptexto: 'sla', opcoes: ['sla', 'sa', 'al', 'sal'], resposta: 0 },
+    { ptexto: 'sla', opcoes: ['sla', 'sa', 'al', 'sal'], resposta: 'sla' },
 
-    { ptexto: 'sla2', opcoes: ['sla2', 'sa', 'al', 'sal'], resposta: 0 },
+    { ptexto: 'sla2', opcoes: ['sla2', 'sa', 'al', 'sal'], resposta: 'sla2' },
 
-    { ptexto: 'sla3',opcoes: ['sla3', 'sa', 'al', 'sal'], resposta: 0 },
+    { ptexto: 'sla3', opcoes: ['sla3', 'sa', 'al', 'sal'], resposta: 'sla3' },
+
+    { ptexto: 'sla3', opcoes: ['sla4', 'sa', 'al', 'sal'], resposta: 'sla4' },
+    
+    { ptexto: 'sla3', opcoes: ['sla5', 'sa', 'al', 'sal'], resposta: 'sla5' },
 ]
 
 var quest_l = [
-    { ptexto: 'sla', opcoes: ['sla', 'sa', 'al', 'sal'], resposta: 0 },
+    { ptexto: 'sla', opcoes: ['sla', 'sa', 'al', 'sal'], resposta: 'sla' },
 
-    { ptexto: 'sla2', opcoes: ['sla2', 'sa', 'al', 'sal'], resposta: 0 },
+    { ptexto: 'sla2', opcoes: ['sla2', 'sa', 'al', 'sal'], resposta: 'sla2' },
 
-    { ptexto: 'sla3', opcoes: ['sla3', 'sa', 'al', 'sal'], resposta: 0 },
+    { ptexto: 'sla3', opcoes: ['sla3', 'sa', 'al', 'sal'], resposta: 'sla3' },
+
+    { ptexto: 'sla3', opcoes: ['sla4', 'sa', 'al', 'sal'], resposta: 'sla4' },
+    
+    { ptexto: 'sla3', opcoes: ['sla5', 'sa', 'al', 'sal'], resposta: 'sla5' },
 ]
+   
 // cabo.
 // setTimeout(minhaFuncao, 1000);
 
@@ -34,16 +43,18 @@ function pergunta() {
     npergunta--;
 
     if (difi == 60) {
-        var pergunt = gambiarra_m[Math.floor(Math.random() * gambiarra_m.length)];
-        gambiarra_m.splice(gambiarra_m.indexOf(pergunt))
+        pergunt = gambiarra_m[Math.floor(Math.random() * gambiarra_m.length)];
+        var index = gambiarra_m.indexOf(pergunt);
+        gambiarra_m.splice(index, 1);
     }
     else {
-        var pergunt = gambiarra_l[Math.floor(Math.random() * gambiarra_l.length)];
-       gambiarra_l.splice(gambiarra_l.indexOf(pergunt))
+        pergunt = gambiarra_l[Math.floor(Math.random() * gambiarra_l.length)];
+        var index = gambiarra_m.indexOf(pergunt);
+        gambiarra_l.splice(index, 1);
+
     };
     document.getElementById("quest").innerHTML = pergunt.ptexto;
 
-    resp = pergunt.resposta;
     pergunt.opcoes = shuffle(pergunt.opcoes);
 
     document.getElementById("a").value = pergunt.opcoes[0];
@@ -60,8 +71,9 @@ function shuffle(array) {
     return array;
 }
 
+
 function res(rel) {
-    if (rel == resp) {
+    if (rel == pergunt.resposta) {
         acertos++;
         console.log("acertou")
     } else {
