@@ -1,5 +1,4 @@
 @import url(inicio.css);
-@import url(reset.css);
 
 html {
     overflow: hidden;
@@ -14,7 +13,7 @@ section {
 
 
 .quest{
-    display: none;
+    color:white
 }
 
 .resultdo{
