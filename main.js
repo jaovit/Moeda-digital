@@ -24,7 +24,7 @@ function pergunta() {
     }
     else {
         pergunt = gambiarra_l[Math.floor(Math.random() * gambiarra_l.length)];
-        var index = gambiarra_m.indexOf(pergunt);
+        var index = gambiarra_l.indexOf(pergunt);
         gambiarra_l.splice(index, 1);
 
     };
