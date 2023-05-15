@@ -26,13 +26,19 @@
             <legend class="ed"> Escolha a dificuldade: </legend>
 
             <input type="radio" name="dif" value="Luiz" id="facil" onclick="difi = 20">
-            <label for="facil" class="facil"> <h1>Luiz</h1> </label>
+            <label for="facil" class="facil">
+                <h1>Luiz</h1>
+            </label>
 
-            <input type="radio" name="dif"value="Médio" id="medio" onclick="difi = 60" checked>
-            <label for="medio" class="medio"> <h1> Médio </h1></label>
+            <input type="radio" name="dif" value="Médio" id="medio" onclick="difi = 60" checked>
+            <label for="medio" class="medio">
+                <h1> Médio </h1>
+            </label>
 
             <input type="radio" name="dif" value="dificil" id="dificil" onclick="difi = 60">
-            <label for="dificil" class="dificil"><h1> Dificil </h1></label>
+            <label for="dificil" class="dificil">
+                <h1> Dificil </h1>
+            </label>
 
         </fieldset>
         <input type="button" value="Start" id="start" onclick="iniciar()">
@@ -41,21 +47,33 @@
 
     <section class="quest">
 
+        <input type="button" value="Start" class="sla" onclick="iniciar()">
+
         <h1>Responda:</h1>
         <p id="quest">pergunta</p>
         <div class="opcoes">
-            <label for="a">A</label>
-            <input type="button" value="a" id="a" onclick="res(document.getElementById('a').value)">
-
-            <label for="b">B</label>
-            <input type="button" value="b" id="b" onclick="res(document.getElementById('b').value)">
-
-            <label for="c">C</label>
-            <input type="button" value="c" id="c" onclick="res(document.getElementById('c').value)">
-
-            <label for="d">D</label>
-            <input type="button" value="d" id="d" onclick="res(document.getElementById('d').value)">
+            <button id="a" class="botoes" onclick="res(document.getElementById('a').innerHTML)"> a </button>
+            <button id="b" class="botoes" onclick="res(document.getElementById('b').innerHTML)"> b </button>
+            <button id="c" class="botoes" onclick="res(document.getElementById('c').innerHTML)"> c </button>
+            <button id="d" class="botoes" onclick="res(document.getElementById('d').innerHTML)"> d </button>
         </div>
+         <!-- <div class="status">
+            <h2>Jovem:<h2>Ser sem nome</h2>
+            </h2>
+            <h2>Boyscoins:<h2>0</h2>
+            </h2>
+            <h2>Tempo:<h2>0</h2>
+            </h2>
+            <h2>Pergunta:<h2>1/5</h2>
+            </h2>
+            <h2>Acertos:<h2>0</h2>
+            </h2>
+        </div>
+       <div class="bonus">
+            <button id="pular"></button>
+            <button id="meio_res"></button>
+            <button id="dica"></button>
+        </div> -->
     </section>
 
     <section class="resultdo">
