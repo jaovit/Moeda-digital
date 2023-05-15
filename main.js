@@ -32,10 +32,10 @@ function pergunta() {
 
     pergunt.opcoes = shuffle(pergunt.opcoes);
 
-    document.getElementById("a").value = pergunt.opcoes[0];
-    document.getElementById("b").value = pergunt.opcoes[1];
-    document.getElementById("c").value = pergunt.opcoes[2];
-    document.getElementById("d").value = pergunt.opcoes[3];
+    document.getElementById("a").innerHTML = pergunt.opcoes[0];
+    document.getElementById("b").innerHTML = pergunt.opcoes[1];
+    document.getElementById("c").innerHTML = pergunt.opcoes[2];
+    document.getElementById("d").innerHTML = pergunt.opcoes[3];
 };
 
 function shuffle(array) {
