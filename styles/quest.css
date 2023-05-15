@@ -1,0 +1,84 @@
+.quest {
+    width: 75vw;
+    height: 35vw;
+    background: rgba(255, 255, 255, .05);
+    border-radius: .8vw;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-family: 'Montserrat', sans-serif;
+    color: #c0bfbf;
+}
+
+#quest {
+    position: absolute;
+    top: 13vw;
+    left: 35vw;
+    font-size: 1.4vw;
+}
+
+.opcoes {
+    position: absolute;
+    bottom: 2.5vw;
+    left: 50%;
+    transform: translateX(-50%);
+    display: grid;
+    grid-template-columns: 25% 25% 25% 25%;
+}
+
+#a,
+#b,
+#c,
+#d {
+    color: #c0bfbf;
+    border-radius: .5vw;
+    border: none;
+    background: orange;
+    font-family: 'Montserrat', sans-serif;
+    width: 16vw;
+    height: 11vw;
+    margin: .75vw;
+    font-size: 1.3vw;
+    font-weight: 600;
+    padding: 1vw;
+    overflow: auto;
+}
+
+.botoes::-webkit-scrollbar {
+    width: .4vw;
+}
+
+.botoes::-webkit-scrollbar-thumb {
+    background-color: #00000085;
+    border-radius: 1vw;
+}
+
+.botoes::-webkit-scrollbar-track {
+    background-color: transparent;
+  
+}
+
+.quest > h1{
+    position: absolute;
+    top: 3vw;
+    left: 50%;
+    transform: translateX(-50%);
+    font-weight: 600;
+    font-size: 1.4vw;
+}
+
+.sla{
+    position: absolute;
+    top: -2vw;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 12.5vw;
+    height: 3vw;
+    background: rgb(204, 0, 255);
+    border: none; 
+    border-radius: .3vw; 
+    font-family: 'Montserrat', sans-serif;
+    color: #d3d3d3;
+    font-size: 1.4vw;
+    font-weight: 600;
+}

@@ -1,20 +1,26 @@
 @import url(inicio.css);
+@import url(quest.css);
+@import url(fim.css);
 
 html {
     overflow: hidden;
     scroll-behavior: smooth;
     scroll-padding-top: 5vw;
     background: #000000;
+    font-family: 'Montserrat', sans-serif;
 }
 
 section {
     position: absolute;
 }
 
-
-.quest{
-    color:white
+.inicio {
+    display: none;
 }
+
+/* .quest{
+    
+} */
 
 .resultdo{
     display: none;
