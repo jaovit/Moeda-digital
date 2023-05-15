@@ -246,13 +246,31 @@ var quest_m =
     ]
 
 var quest_l = [
-    { ptexto: 'sla', opcoes: ['sla', 'sa', 'al', 'sal'], resposta: 'sla' },
+    { ptexto: 'O que são criptomoedas?', opcoes: ['É um tipo de dinheiro, sendo totalmente digital',
+     'São moedas normais criptografadas em codigo morse',
+     'São moedas kryptonianas',
+     'sla'], 
+     resposta: 'É um tipo de dinheiro, sendo totalmente digital',
+     dica: 'São moedas digitais' },
 
-    { ptexto: 'sla2', opcoes: ['sla2', 'sa', 'al', 'sal'], resposta: 'sla2' },
+    { ptexto: 'O que é a mineração de criptomoedas?', 
+    opcoes: ['O processo de gerar novas unidades de criptomoedas', 
+    'É minerar moedas kryptonianas em minas',
+    'Garimpar moedas dentro de um cpu com uma picareta', 
+    'NÃO É ESSA.'], 
+    resposta: 'O processo de gerar novas unidades de criptomoedas',
+    dica: 'É o processo de gerar novas unidades de criptomoedas'},
 
-    { ptexto: 'sla3', opcoes: ['sla3', 'sa', 'al', 'sal'], resposta: 'sla3' },
+    { ptexto: 'Qual é a criptomoeda mais famosa?', opcoes: ['Bitcoin', 'TAMBÉM NÃO.', 'NÃO.', 'NN (sem criatividade)'], 
+    resposta: 'Bitcoin',
+    dica: 'bitc...' },
 
-    { ptexto: 'sla3', opcoes: ['sla4', 'sa', 'al', 'sal'], resposta: 'sla4' },
+    { ptexto: 'O que diferencia dinheiro normal de criptomoedas?', opcoes: ['Dinheiro normal é fisico, enquanto criptomoedas são digitais',
+    'Dinheiro normal tem cnpj, já as criptomoedas só tem cpf.... mds',
+    'Passa pra outra', 'São a mesma coisa'], 
+     resposta: 'Dinheiro normal é fisico, enquanto criptomoedas são digitais',
+    dica: 'É a que tem a resposta certa' },
 
-    { ptexto: 'sla3', opcoes: ['sla5', 'sa', 'al', 'sal'], resposta: 'sla5' },
+    { ptexto: 'Dnheiro vir....', opcoes: ['tual', 'gem', 'ginópolis', 'tuoso'], resposta: 'tual',
+dica: 'pqp.. (mó vergonha alheia fazer essa merda, bem cringe)' },
 ]
