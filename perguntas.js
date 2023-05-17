@@ -58,7 +58,7 @@ var quest_m =
             opcoes: ["Uma plataforma de negociação de criptomoedas, onde os usuários podem comprar, vender e trocar diferentes moedas virtuais", "Um banco que oferece serviços de criptomoedas", "Um sistema de mineração de criptomoedas", "Uma forma de carteira virtual"],
             resposta: "Uma plataforma de negociação de criptomoedas, onde os usuários podem comprar, vender e trocar diferentes moedas virtuais",
             dica: "As exchanges de criptomoedas são plataformas online onde os usuários podem comprar, vender e trocar diferentes tipos de criptomoedas, além de poderem acompanhar a cotação e o histórico de preços das moedas."
-        },
+        },      display: none;
 
         {
             ptexto: "O que é a mineração de criptomoedas?",
@@ -117,7 +117,7 @@ var quest_m =
             ptexto: "O que é a criptografia de chave pública?",
             opcoes: [
                 "Uma forma de criptografia utilizada para proteger informações confidenciais em uma rede de criptomoedas",
-                "Uma forma de autenticação utilizada para verificar a identidade de um usuário em uma rede de criptomoedas",
+                "Uma forma de autenticação utilizada para verificar a identidade de um usuá      display: none;rio em uma rede de criptomoedas",
                 "Uma forma de mineração de criptomoedas",
                 "Uma forma de carteira virtual para criptomoedas"
             ],
@@ -271,6 +271,6 @@ var quest_l = [
      resposta: 'Dinheiro normal é fisico, enquanto criptomoedas são digitais',
     dica: 'É a que tem a resposta certa' },
 
-    { ptexto: 'Dnheiro vir....', opcoes: ['tual', 'gem', 'ginópolis', 'tuoso'], resposta: 'tual',
+    { ptexto: 'Denheiro vir....', opcoes: ['tual', 'gem', 'ginópolis', 'tuoso'], resposta: 'tual',
 dica: 'pqp.. (mó vergonha alheia fazer essa merda, bem cringe)' },
 ]
