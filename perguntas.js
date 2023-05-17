@@ -58,7 +58,7 @@ var quest_m =
             opcoes: ["Uma plataforma de negociação de criptomoedas, onde os usuários podem comprar, vender e trocar diferentes moedas virtuais", "Um banco que oferece serviços de criptomoedas", "Um sistema de mineração de criptomoedas", "Uma forma de carteira virtual"],
             resposta: "Uma plataforma de negociação de criptomoedas, onde os usuários podem comprar, vender e trocar diferentes moedas virtuais",
             dica: "As exchanges de criptomoedas são plataformas online onde os usuários podem comprar, vender e trocar diferentes tipos de criptomoedas, além de poderem acompanhar a cotação e o histórico de preços das moedas."
-        },      display: none;
+        },      
 
         {
             ptexto: "O que é a mineração de criptomoedas?",
