@@ -12,7 +12,7 @@
     color: #c0bfbf;
 }
 
-.quest_real{
+.quest_real {
     position: absolute;
     height: 13vw;
     width: 43vw;
@@ -92,7 +92,7 @@
     font-weight: 500;
 }
 
-.sla > h1{
+.sla>h1 {
     position: absolute;
     top: 50%;
     left: 50%;
@@ -138,11 +138,11 @@
     padding-left: 1.09vw;
 }
 
-.status>h2:nth-child(9){
+.status>h2:nth-child(9) {
     padding-bottom: 0;
 }
 
-.status>h2:nth-child(10){
+.status>h2:nth-child(10) {
     padding-left: 2.4vw;
     padding-bottom: 0;
 }
