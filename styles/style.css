@@ -14,14 +14,14 @@ section {
     position: absolute;
 }
 
-.inicio {
+/* .inicio {
     display: none;
-}
+} */
 
 .quest{
     display: none;
 }
 
-/* .resultdo{
+.resultdo{
     display: none;
-} */
+}

@@ -1,6 +1,6 @@
-.resultdo{
-    width: 60vw;
-    height: 40vw;
+.resultdo {
+    width: 50vw;
+    height: 20vw;
     /* background: rgba(255, 255, 255, .1); */
     background: rgba(255, 255, 255, .05);
     /* background: linear-gradient(to bottom,rgba(255,255,255,.08) 0%,rgba(255,255,255,.03) 100%); */
@@ -10,4 +10,73 @@
     transform: translate(-50%, -50%);
     font-family: 'Montserrat', sans-serif;
     color: #c0bfbf;
+}
+
+#table {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    margin: 0;
+    top: 7vw;
+    padding: 0;
+}
+
+th {
+    padding: .25vw 2.5vw .25vw 2.5vw;
+    border: .1vw solid rgb(204, 0, 255);
+    background-color: rgb(0, 0, 0);
+    color: #f5f5f5;
+    font-size: 1vw;
+    font-weight: 500;
+    margin: 0;
+}
+
+.th:nth-child(1){
+    border-radius: .5vw 0 0 0;
+
+}
+
+.th:nth-child(5){
+    border-radius: 0 .5vw 0 0;
+
+}
+
+.tbody{
+    background: #000000;
+    border: none;
+}
+
+td {
+    padding: .25vw .5vw .25vw .5vw;
+    font-size: 1vw;
+    margin: 0;
+    background: #000000;
+    text-align: center;
+    border: none;
+    font-weight: 500;
+}
+
+.td2{
+    background: rgba(82, 82, 82, 0.411);
+    color: #000000;
+}
+
+#reniciar{
+    position: absolute;
+    top: 2vw;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 12.5vw;
+    height: 3vw;
+    background: orange;
+    border: none; 
+    border-radius: .3vw; 
+    font-family: 'Montserrat', sans-serif;
+    color: #d3d3d3;
+    font-size: 1.4vw;
+    font-weight: 600;
+}
+
+#reniciar:hover{
+    transform: translateX(-50%) scale(1.05);
 }
