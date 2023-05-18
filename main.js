@@ -4,6 +4,9 @@ var npergunta = 5;
 var difi = 60;
 var stent = false;
 var pergunt;
+var quest = document.getElementById("sec-quest");
+var inicio = document.getElementById("inicio");
+var fimSection = document.getElementById("fim");
 
 // setTimeout(minhaFuncao, 1000);
 
@@ -59,7 +62,14 @@ function res(rel) {
 
 function iniciar() {
     if (stent == false) {
-        // stytles do inicio
+        // quest.style.cssText =
+        // 'display: block;'
+        // // animaçao
+        // ;
+        // inicio.style.cssText =
+        // 'display: none;'
+        // // animaçao
+        // ;
     }
     pergunta();
     // styles da quest;
