@@ -271,6 +271,6 @@ var quest_l = [
      resposta: 'Dinheiro normal é fisico, enquanto criptomoedas são digitais',
     dica: 'É a que tem a resposta certa' },
 
-    { ptexto: 'Dnheiro vir....', opcoes: ['tual', 'gem', 'ginópolis', 'tuoso'], resposta: 'tual',
+    { ptexto: 'Dinheiro vir....', opcoes: ['tual', 'gem', 'ginópolis', 'tuoso'], resposta: 'tual',
 dica: 'pqp.. (mó vergonha alheia fazer essa merda, bem cringe)' },
 ]
