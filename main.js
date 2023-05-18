@@ -15,11 +15,10 @@ var nmData;
 var doisJog = false;
 var inicioTest = true;
 
-
 // setTimeout(minhaFuncao, 1000);
 
-var gambiarra_m = quest_m;
-var gambiarra_l = quest_l;
+var gambiarra_m = [];
+var gambiarra_l = [];
 
 function pergunta() {
     if (npergunta == 5) {
@@ -29,15 +28,16 @@ function pergunta() {
     npergunta++;
 
     if (difi == 60) {
-        pergunt = gambiarra_m[Math.floor(Math.random() * gambiarra_m.length)];
-        var index = gambiarra_m.indexOf(pergunt);
-        gambiarra_m.splice(index, 1);
+        pergunt = quest_m[Math.floor(Math.random() * gambiarra_m.length)];
+        var index = quest_m.indexOf(pergunt);
+        quest_m.splice(index, 1);
+        gambiarra_m.push(pergunt);
     }
     else {
-        pergunt = gambiarra_l[Math.floor(Math.random() * gambiarra_l.length)];
-        var index = gambiarra_l.indexOf(pergunt);
-        gambiarra_l.splice(index, 1);
-
+        pergunt = quest_l[Math.floor(Math.random() * gambiarra_l.length)];
+        var index = quest_l.indexOf(pergunt);
+        quest_l.splice(index, 1);
+        gambiarra_l.push(pergunt);
     };
     document.getElementById("quest").innerHTML = pergunt.ptexto;
 
@@ -79,18 +79,17 @@ function statusFunc() {
 }
 
 function iniciar() {
-   
     nome = document.getElementById("nome").value;
     if (nome == '') {
         nome = 'Ser sem nome';
     }
- statusFunc();
+    statusFunc();
     if (inicioTest == true) {
         nmData = nome;
         inicioTest = false;
     } else {
         if (nmData == nome) {
-            nmData == nome;
+            doisJog = false;
         } else {
             doisJog = true;
             stent = 1;
@@ -135,8 +134,12 @@ function table() {
         return;
     } else {
         if (stent > 1) {
-
+            if (stent > 2) {
+            document.getElementById("tr").remove();
+                
+            }
             var trTotal = tbod.insertRow();
+            trTotal.id = "tr";
 
             let td_total = trTotal.insertCell();
             let td_jovemTotal = trTotal.insertCell();
@@ -180,8 +183,10 @@ function reset() {
     acertos = 0;
     erros = 0;
     stent++;
-    gambiarra_m = quest_m;
-    gambiarra_l = quest_l;
+    quest_m = quest_m.concat(gambiarra_m);
+    quest_l = quest_l.concat(gambiarra_l);
+    gambiarra_m = [];
+    gambiarra_l = [];
     fimSection.style.cssText =
         'display: none;'
         // animaçao

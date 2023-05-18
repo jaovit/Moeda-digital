@@ -47,7 +47,9 @@
 
     <section class="quest" id="sec-quest">
 
-        <div  class="sla"> <h1>Quest</h1> </div>
+        <div class="sla">
+            <h1>Quest</h1>
+        </div>
         <div class="quest_real">
             <h1 class="h1">Responda:</h1>
             <p id="quest">pergunta</p>
@@ -77,8 +79,14 @@
         </div> -->
     </section>
 
+    
     <section class="resultdo" id="fim">
-        <table id="table">
+        
+        <div class="reniciar">
+            <input type="button" value="reniciar" id="reniciar" onclick="reset()">
+        </div>
+
+        <table id="table" class="table">
             <thead>
                 <th class="th">Rodada</th>
                 <th class="th">Jovem</th>
@@ -87,16 +95,14 @@
                 <th class="th">Erros</th>
             </thead>
             <tbody id="tbody" class="tbody">
-                
-            <!-- <tr>
+
+                <!-- <tr>
                 <td class="td2">total</td>
             </tr> -->
             </tbody>
         </table>
 
-        <div class="reniciar">
-            <input type="button" value="reniciar" id="reniciar" onclick="reset()">
-        </div>
+        
     </section>
 </body>
 
