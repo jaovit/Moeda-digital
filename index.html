@@ -47,7 +47,7 @@
 
     <section class="quest">
 
-        <input type="button" value="Start" class="sla" onclick="iniciar()">
+        <div  class="sla"> <h1>Quest</h1> </div>
         <div class="quest_real">
             <h1 class="h1">Responda:</h1>
             <p id="quest">pergunta</p>
@@ -59,22 +59,22 @@
             <button id="d" class="botoes" onclick="res(document.getElementById('d').innerHTML)"> d </button>
         </div>
         <div class="status">
-            <h2>Jovem:<h2>Ser sem nome</h2>
+            <h2>Jovem:<h2 id="nm">Ser sem nome</h2>
             </h2>
-            <h2>Boyscoins:<h2>0</h2>
+            <h2>Boyscoins:<h2 id="boyscoins">0</h2>
             </h2>
-            <h2>Tempo:<h2>0</h2>
+            <h2>Tempo:<h2 id="tempo">0</h2>
             </h2>
-            <h2>Pergunta:<h2>1/5</h2>
+            <h2>Pergunta:<h2 id="n-pergunt">1/5</h2>
             </h2>
-            <h2>Acertos:<h2>0</h2>
+            <h2>Acertos:<h2 id="acertos">0</h2>
             </h2>
         </div>
-        <div class="bonus">
+        <!-- <div class="bonus">
             <button id="pular"></button>
             <button id="meio_res"></button>
             <button id="dica"></button>
-        </div>
+        </div> -->
     </section>
 
     <section class="resultdo">
