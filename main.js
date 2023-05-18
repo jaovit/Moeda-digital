@@ -79,12 +79,12 @@ function statusFunc() {
 }
 
 function iniciar() {
-    statusFunc();
+   
     nome = document.getElementById("nome").value;
     if (nome == '') {
         nome = 'Ser sem nome';
     }
-
+ statusFunc();
     if (inicioTest == true) {
         nmData = nome;
         inicioTest = false;
