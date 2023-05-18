@@ -1,6 +1,7 @@
 .inicio{
     width: 26vw;
     height: 34.75vw;
+    /* background: rgba(255, 255, 255, .1); */
     background-image: linear-gradient(to bottom,rgba(255,255,255,.08) 0%,rgba(255,255,255,.03) 100%);
     border-radius: .8vw;
     top: 50%;
