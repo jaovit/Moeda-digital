@@ -48,16 +48,17 @@
     <section class="quest">
 
         <input type="button" value="Start" class="sla" onclick="iniciar()">
-
-        <h1>Responda:</h1>
-        <p id="quest">pergunta</p>
+        <div class="quest_real">
+            <h1 class="h1">Responda:</h1>
+            <p id="quest">pergunta</p>
+        </div>
         <div class="opcoes">
             <button id="a" class="botoes" onclick="res(document.getElementById('a').innerHTML)"> a </button>
             <button id="b" class="botoes" onclick="res(document.getElementById('b').innerHTML)"> b </button>
             <button id="c" class="botoes" onclick="res(document.getElementById('c').innerHTML)"> c </button>
             <button id="d" class="botoes" onclick="res(document.getElementById('d').innerHTML)"> d </button>
         </div>
-         <div class="status">
+        <div class="status">
             <h2>Jovem:<h2>Ser sem nome</h2>
             </h2>
             <h2>Boyscoins:<h2>0</h2>
@@ -69,7 +70,7 @@
             <h2>Acertos:<h2>0</h2>
             </h2>
         </div>
-       <div class="bonus">
+        <div class="bonus">
             <button id="pular"></button>
             <button id="meio_res"></button>
             <button id="dica"></button>
