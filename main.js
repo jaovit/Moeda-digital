@@ -44,13 +44,13 @@ function pergunta() {
     npergunta++;
 
     if (difi == 60) {
-        pergunt = quest_m[Math.floor(Math.random() * gambiarra_m.length)];
+        pergunt = quest_m[Math.floor(Math.random() * quest_m.length)];
         var index = quest_m.indexOf(pergunt);
         quest_m.splice(index, 1);
         gambiarra_m.push(pergunt);
     }
     else {
-        pergunt = quest_l[Math.floor(Math.random() * gambiarra_l.length)];
+        pergunt = quest_l[Math.floor(Math.random() * quest_l.length)];
         var index = quest_l.indexOf(pergunt);
         quest_l.splice(index, 1);
         gambiarra_l.push(pergunt);
@@ -92,7 +92,7 @@ function res(rel, elemento) {
             for (let i = 0; i < arrayElemt.length; i++) {
                 if (arrayElemt[i].innerHTML === pergunt.resposta) {
                 } else {
-                    arrayElemt[i].style.cssText = 'background: transparent;' + 'color: transparent;';
+                    arrayElemt[i].style.cssText = 'background: transparent;' + 'color: transparent;' + 'margin-top:0vw;';
                 }
             };
 
@@ -113,7 +113,7 @@ function res(rel, elemento) {
                     if (arrayElemt[i] == elemento) {
 
                     } else {
-                        arrayElemt[i].style.cssText = 'background: transparent;' + 'color: transparent;';
+                        arrayElemt[i].style.cssText = 'background: transparent;' + 'color: transparent;' + 'margin-top:0vw;';
                     }
                 };
             }
@@ -124,23 +124,26 @@ function res(rel, elemento) {
 };
 
 function proximo() {
+    document.getElementById("dicaText").style.cssText = 'display: none;';
+    document.getElementById("triangulo").style.cssText = 'display: none;';
+    arrayElemt = [document.getElementById("a"), document.getElementById("b"), document.getElementById("c"), document.getElementById("d")];
     cortado = false;
     dica = false;
     dicaAperta = false;
     if (npergunta == 5) {
-        fim();
         for (let index = 0; index < arrayElemt.length; index++) {
             let element = arrayElemt[index];
-            element.style.cssText = 'background: ;' + 'color: #ffffff;' + 'transform: ;';
+            element.style.cssText = 'background: ;' + 'color: #ffffff;' + 'transform: ;' + 'margin-top: 89vw;';
             respondido = false;
 
         }
+        fim();
         return;
     }
     if (respondido == true) {
         for (let index = 0; index < arrayElemt.length; index++) {
             let element = arrayElemt[index];
-            element.style.cssText = 'background: ;' + 'color: #ffffff;' + 'transform: ;';
+            element.style.cssText = 'background: ;' + 'color: #ffffff;' + 'transform: ;' + 'margin-top: ;';
         }
         pergunta();
         respondido = false;
@@ -150,28 +153,10 @@ function proximo() {
     }
 };
 
-function iniciarTemporizador() {
-    timer = setInterval(function () {
-        segundos++;
-        document.getElementById("tempo").innerHTML = segundos + 's';
-    }, 1000);
-}
-
-function pararTemporizador() {
-    clearInterval(timer);
-    segundos = 0;
-    document.getElementById("tempo").innerHTML = segundos + 's';
-};
-
-function statusFunc() {
-    document.getElementById("nm").innerHTML = nome;
-    document.getElementById("boyscoins").innerHTML = boyscoins;
-    document.getElementById("acertos").innerHTML = acertos;
-}
-
 function bonus() {
     if (bonuS == 1) {
         if (boyscoins >= 25) {
+            document.getElementById("boyscoins").innerHTML = boyscoins;
             boyscoins = boyscoins - 25;
             respondido = true;
             statusFunc();
@@ -179,6 +164,7 @@ function bonus() {
         }
     }
     if (bonuS == 2) {
+        if (respondido == true) {}else{
         if (boyscoins >= 40) {
             if (cortado == false){
             boyscoins = boyscoins - 40;
@@ -190,14 +176,14 @@ function bonus() {
             arrayElemt.splice(indice, 1);
 
             remover1 = Math.floor(Math.random() * arrayElemt.length);
-            arrayElemt[remover1].style.cssText = 'background: transparent;' + 'color: transparent;';
+    arrayElemt[remover1].style.cssText = 'background: transparent;' + 'color: transparent;' + 'margin-top:0vw;';
             arrayElemt.splice(remover1, 1);
 
             remover2 = Math.floor(Math.random() * arrayElemt.length);
-            arrayElemt[remover2].style.cssText = 'background: transparent;' + 'color: transparent;';
+            arrayElemt[remover2].style.cssText = 'background: transparent;' + 'color: transparent;' + 'margin-top:0vw;';
             arrayElemt.splice(remover2, 1);
             cortado = true;
-        }
+             } }
     }
     }
     if (bonuS == 3) {
@@ -224,6 +210,26 @@ function bonus() {
         }
     }
 };
+
+
+function iniciarTemporizador() {
+    timer = setInterval(function () {
+        segundos++;
+        document.getElementById("tempo").innerHTML = segundos + 's';
+    }, 1000);
+}
+
+function pararTemporizador() {
+    clearInterval(timer);
+    segundos = 0;
+    document.getElementById("tempo").innerHTML = segundos + 's';
+};
+
+function statusFunc() {
+    document.getElementById("nm").innerHTML = nome;
+    document.getElementById("boyscoins").innerHTML = boyscoins;
+    document.getElementById("acertos").innerHTML = acertos;
+}
 
 function iniciar() {
      document.getElementById("dicaText").style.cssText = 'display: none;';
