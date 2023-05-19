@@ -55,7 +55,7 @@
             <p id="quest">pergunta</p>
         </div>
         <div class="opcoes">
-            <button id="a" class="botoes"
+            <button id="a"  class="botoes" 
                 onclick="res(document.getElementById('a').innerHTML, document.getElementById('a'));"> a </button>
             <button id="b" class="botoes"
                 onclick="res(document.getElementById('b').innerHTML, document.getElementById('b'));"> b </button>
@@ -76,11 +76,16 @@
             <h2>Acertos:<h2 id="acertos">0</h2>
             </h2>
         </div>
-        <!-- <div class="bonus">
-            <button id="pular"></button>
-            <button id="meio_res"></button>
-            <button id="dica"></button>
-        </div> -->
+        <div id="triangulo"></div>
+        <div id="dicaText"> dica </div>
+        <div class="bonus">
+            <button id="pular" onclick="bonus(1)">Pular</button>
+            <label for="pular" > BYC: 25</label>
+            <button id="meio_res" onclick="bonus(2)">1/2</button>
+            <label for="meio_res"> BYC: 40</label>
+            <button id="dica" onclick="bonus(3)">dica</button>
+            <label for="dica"> BYC: 75</label>
+        </div>
         <button id="proximo" onclick="proximo()"> Proximo </button>
     </section>
 

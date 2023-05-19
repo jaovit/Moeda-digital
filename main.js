@@ -6,7 +6,7 @@ var errosTotais = 0;
 var difi = 60;
 var stent = 1;
 var pergunt;
-var boyscoins = 50;
+var boyscoins = 0;
 var quest = document.getElementById("sec-quest");
 var inicio = document.getElementById("inicio");
 var fimSection = document.getElementById("fim");
@@ -19,12 +19,19 @@ var arrayElemt = [];
 var certoElemt;
 var gambiarra_m = [];
 var gambiarra_l = [];
+var input = document.getElementById("nome");
+var limiteCaracteres = 12;
+var segundos = 0;
+var timer;
 
-// setTimeout(minhaFuncao, 1000);
+input.addEventListener("input", function () {
+    if (input.value.length > limiteCaracteres) {
+        input.value = input.value.slice(0, limiteCaracteres);
+    }
+});
 
 function pergunta() {
     if (npergunta == 5) {
-        fim();
         return;
     }
     npergunta++;
@@ -42,6 +49,7 @@ function pergunta() {
         gambiarra_l.push(pergunt);
     };
     document.getElementById("quest").innerHTML = pergunt.ptexto;
+    document.getElementById("dicaText").innerHTML = pergunt.dica;
 
     pergunt.opcoes = shuffle(pergunt.opcoes);
 
@@ -68,21 +76,22 @@ function res(rel, elemento) {
         if (rel == pergunt.resposta) {
             arrayElemt = [document.getElementById("a"), document.getElementById("b"), document.getElementById("c"), document.getElementById("d")];
             acertos++;
-            boyscoins = boyscoins + 50;
+            boyscoins = boyscoins + 100;
             console.log("acertou");
 
             elemento.style.cssText =
                 'background: rgb(1, 214, 1);' + 'transform: scale(1.03);'
                 ;
-                for (let i = 0; i < arrayElemt.length; i++) {
-                    if (arrayElemt[i].innerHTML === pergunt.resposta) {
-                    } else {
-                            arrayElemt[i].style.cssText = 'background: transparent;' + 'color: transparent;';
-                        }
-                    };
+            for (let i = 0; i < arrayElemt.length; i++) {
+                if (arrayElemt[i].innerHTML === pergunt.resposta) {
+                } else {
+                    arrayElemt[i].style.cssText = 'background: transparent;' + 'color: transparent;';
+                }
+            };
 
         } else {
             erros++;
+            boyscoins = boyscoins - 30;
             console.log("errou");
             elemento.style.cssText =
                 'background: red;' + 'transform: scale(1.03);'
@@ -107,10 +116,20 @@ function res(rel, elemento) {
 };
 
 function proximo() {
-    if (respondido == true) {
-        for (let index = 0; index < arrayElemt.length; index++){
+    if (npergunta == 5) {
+        fim();
+         for (let index = 0; index < arrayElemt.length; index++) {
             let element = arrayElemt[index];
-            element.style.cssText = 'background: orange;' + 'color: #ffffff;' + 'transform: scale(1.03);';
+            element.style.cssText = 'background: ;' + 'color: #ffffff;' + 'transform: ;';
+        respondido = false;
+
+        }
+        return;
+    }
+    if (respondido == true) {
+        for (let index = 0; index < arrayElemt.length; index++) {
+            let element = arrayElemt[index];
+            element.style.cssText = 'background: ;' + 'color: #ffffff;' + 'transform: ;';
         }
         pergunta();
         respondido = false;
@@ -119,13 +138,46 @@ function proximo() {
     }
 };
 
+function iniciarTemporizador() {
+    timer = setInterval(function() {
+        segundos++;
+        document.getElementById("tempo").innerHTML = segundos + 's';
+    }, 1000);
+}
+ 
+function pararTemporizador() {
+    clearInterval(timer);
+    segundos = 0;
+    document.getElementById("tempo").innerHTML = segundos + 's';
+};
+
 function statusFunc() {
     document.getElementById("nm").innerHTML = nome;
     document.getElementById("boyscoins").innerHTML = boyscoins;
-    document.getElementById("tempo").innerHTML = 0;
     document.getElementById("n-pergunt").innerHTML = npergunta + '/5';
     document.getElementById("acertos").innerHTML = acertos;
 }
+
+function bonus(bonuS){
+    if (bonuS == 1) {
+        if (boyscoins >= 25){
+            boyscoins = boyscoins - 25;
+            respondido = true;
+            statusFunc();
+            proximo();
+        }
+    } 
+    if (bonuS == 2) {
+        if (boyscoins >= 40) {
+            
+        }
+    }
+    if (bonuS == 3) {
+        if (boyscoins >= 75) {
+            
+        }
+    }
+};
 
 function iniciar() {
     nome = document.getElementById("nome").value;
@@ -133,6 +185,7 @@ function iniciar() {
         nome = 'Ser sem nome';
     }
     statusFunc();
+    iniciarTemporizador();
     if (inicioTest == true) {
         nmData = nome;
         inicioTest = false;
@@ -144,7 +197,7 @@ function iniciar() {
             stent = 1;
             acertosTotais = 0;
             errosTotais = 0;
-            boyscoins = 50;
+            boyscoins = 0;
             nmData = nome;
         }
     }
@@ -215,6 +268,7 @@ function formatarNum() {
 }
 
 function fim() {
+    pararTemporizador();
     table();
     fimSection.style.cssText =
         'display: block;'
