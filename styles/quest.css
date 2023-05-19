@@ -117,43 +117,14 @@
     left: 1.5vw;
     top: 2.5vw;
     border: solid .125vw rgb(204, 0, 255);
+    padding: 0 1.5vw 1.5vw 0;
     padding: 2vw;
 }
 
 .status>h2 {
-    padding: 0 1.5vw 1.5vw 0;
+    width: 50%;
+    padding: .65vw  0 .65vw 0;
     display: inline-block;
-}
-
-.status>h2:nth-child(4),
-.status>h2:nth-child(6),
-.status>h2:nth-child(8) {
-    padding-right: 7vw;
-}
-
-.status>h2:nth-child(2) {
-    padding-left: 2.75vw;
-}
-
-.status>h2:nth-child(4) {
-    padding-left: 1vw;
-}
-
-.status>h2:nth-child(6) {
-    padding-left: 2.7vw;
-}
-
-.status>h2:nth-child(8) {
-    padding-left: 1.09vw;
-}
-
-.status>h2:nth-child(9) {
-    padding-bottom: 0;
-}
-
-.status>h2:nth-child(10) {
-    padding-left: 2.4vw;
-    padding-bottom: 0;
 }
 
 .bonus {
