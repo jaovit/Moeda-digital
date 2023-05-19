@@ -55,10 +55,14 @@
             <p id="quest">pergunta</p>
         </div>
         <div class="opcoes">
-            <button id="a" class="botoes" onclick="res(document.getElementById('a').innerHTML)"> a </button>
-            <button id="b" class="botoes" onclick="res(document.getElementById('b').innerHTML)"> b </button>
-            <button id="c" class="botoes" onclick="res(document.getElementById('c').innerHTML)"> c </button>
-            <button id="d" class="botoes" onclick="res(document.getElementById('d').innerHTML)"> d </button>
+            <button id="a" class="botoes"
+                onclick="res(document.getElementById('a').innerHTML, document.getElementById('a'));"> a </button>
+            <button id="b" class="botoes"
+                onclick="res(document.getElementById('b').innerHTML, document.getElementById('b'));"> b </button>
+            <button id="c" class="botoes"
+                onclick="res(document.getElementById('c').innerHTML, document.getElementById('c'));"> c </button>
+            <button id="d" class="botoes"
+                onclick="res(document.getElementById('d').innerHTML, document.getElementById('d'));"> d </button>
         </div>
         <div class="status">
             <h2>Jovem:<h2 id="nm">Ser sem nome</h2>
@@ -77,11 +81,12 @@
             <button id="meio_res"></button>
             <button id="dica"></button>
         </div> -->
+        <button id="proximo" onclick="proximo()"> Proximo </button>
     </section>
 
-    
+
     <section class="resultdo" id="fim">
-        
+
         <div class="reniciar">
             <input type="button" value="reniciar" id="reniciar" onclick="reset()">
         </div>
@@ -102,7 +107,7 @@
             </tbody>
         </table>
 
-        
+
     </section>
 </body>
 

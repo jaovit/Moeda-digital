@@ -14,11 +14,13 @@ var nome;
 var nmData;
 var doisJog = false;
 var inicioTest = true;
-
-// setTimeout(minhaFuncao, 1000);
-
+var respondido = false;
+var arrayElemt = [];
+var certoElemt;
 var gambiarra_m = [];
 var gambiarra_l = [];
+
+// setTimeout(minhaFuncao, 1000);
 
 function pergunta() {
     if (npergunta == 5) {
@@ -57,17 +59,64 @@ function shuffle(array) {
     return array;
 }
 
-function res(rel) {
+function res(rel, elemento) {
     statusFunc();
-    if (rel == pergunt.resposta) {
-        acertos++;
-        boyscoins = boyscoins + 50;
-        console.log("acertou")
-    } else {
-        erros++;
-        console.log("errou")
+
+    if (respondido == false) {
+        respondido = true;
+
+        if (rel == pergunt.resposta) {
+            arrayElemt = [document.getElementById("a"), document.getElementById("b"), document.getElementById("c"), document.getElementById("d")];
+            acertos++;
+            boyscoins = boyscoins + 50;
+            console.log("acertou");
+
+            elemento.style.cssText =
+                'background: rgb(1, 214, 1);' + 'transform: scale(1.03);'
+                ;
+                for (let i = 0; i < arrayElemt.length; i++) {
+                    if (arrayElemt[i].innerHTML === pergunt.resposta) {
+                    } else {
+                            arrayElemt[i].style.cssText = 'background: transparent;' + 'color: transparent;';
+                        }
+                    };
+
+        } else {
+            erros++;
+            console.log("errou");
+            elemento.style.cssText =
+                'background: red;' + 'transform: scale(1.03);'
+                ;
+            arrayElemt = [document.getElementById("a"), document.getElementById("b"), document.getElementById("c"), document.getElementById("d")];
+
+            for (let i = 0; i < arrayElemt.length; i++) {
+                if (arrayElemt[i].innerHTML === pergunt.resposta) {
+                    certoElemt = arrayElemt[i];
+                    certoElemt.style.cssText = 'background: rgb(1, 214, 1);' + 'transform: scale(1.03);';
+                } else {
+                    if (arrayElemt[i] == elemento) {
+
+                    } else {
+                        arrayElemt[i].style.cssText = 'background: transparent;' + 'color: transparent;';
+                    }
+                };
+            }
+
+        }
     }
-    pergunta()
+};
+
+function proximo() {
+    if (respondido == true) {
+        for (let index = 0; index < arrayElemt.length; index++){
+            let element = arrayElemt[index];
+            element.style.cssText = 'background: orange;' + 'color: #ffffff;' + 'transform: scale(1.03);';
+        }
+        pergunta();
+        respondido = false;
+    } else {
+
+    }
 };
 
 function statusFunc() {
@@ -135,8 +184,8 @@ function table() {
     } else {
         if (stent > 1) {
             if (stent > 2) {
-            document.getElementById("tr").remove();
-                
+                document.getElementById("tr").remove();
+
             }
             var trTotal = tbod.insertRow();
             trTotal.id = "tr";
@@ -195,4 +244,4 @@ function reset() {
         'display: block;'
         // animaçao
         ;
-};
+}
