@@ -79,12 +79,13 @@
         <div id="triangulo"></div>
         <div id="dicaText"> dica </div>
         <div class="bonus">
-            <button id="pular" onclick="bonus(1)">Pular</button>
+            <button id="pular" onclick="bonuS = 1;bonus()">Pular</button>
             <label for="pular" > BYC: 25</label>
-            <button id="meio_res" onclick="bonus(2)">1/2</button>
-            <label for="meio_res"> BYC: 40</label>
-            <button id="dica" onclick="bonus(3)">dica</button>
+            <button id="dica" onclick="bonuS = 3;bonus()">dica</button>
             <label for="dica"> BYC: 75</label>
+            <button id="meio_res" onclick="bonuS = 2;bonus()">1/2</button>
+            <label for="meio_res"> BYC: 40</label>
+            
         </div>
         <button id="proximo" onclick="proximo()"> Proximo </button>
     </section>

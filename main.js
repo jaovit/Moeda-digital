@@ -23,6 +23,13 @@ var input = document.getElementById("nome");
 var limiteCaracteres = 12;
 var segundos = 0;
 var timer;
+var dica = false;
+var dicaAperta = false;
+var bonuS = 0;
+var arraytext;
+var remover1;
+var remover2;
+var cortado = false;
 
 input.addEventListener("input", function () {
     if (input.value.length > limiteCaracteres) {
@@ -113,15 +120,19 @@ function res(rel, elemento) {
 
         }
     }
+    statusFunc();
 };
 
 function proximo() {
+    cortado = false;
+    dica = false;
+    dicaAperta = false;
     if (npergunta == 5) {
         fim();
-         for (let index = 0; index < arrayElemt.length; index++) {
+        for (let index = 0; index < arrayElemt.length; index++) {
             let element = arrayElemt[index];
             element.style.cssText = 'background: ;' + 'color: #ffffff;' + 'transform: ;';
-        respondido = false;
+            respondido = false;
 
         }
         return;
@@ -133,18 +144,19 @@ function proximo() {
         }
         pergunta();
         respondido = false;
+        document.getElementById("n-pergunt").innerHTML = npergunta + '/5';
     } else {
 
     }
 };
 
 function iniciarTemporizador() {
-    timer = setInterval(function() {
+    timer = setInterval(function () {
         segundos++;
         document.getElementById("tempo").innerHTML = segundos + 's';
     }, 1000);
 }
- 
+
 function pararTemporizador() {
     clearInterval(timer);
     segundos = 0;
@@ -154,27 +166,61 @@ function pararTemporizador() {
 function statusFunc() {
     document.getElementById("nm").innerHTML = nome;
     document.getElementById("boyscoins").innerHTML = boyscoins;
-    document.getElementById("n-pergunt").innerHTML = npergunta + '/5';
     document.getElementById("acertos").innerHTML = acertos;
 }
 
-function bonus(bonuS){
+function bonus() {
     if (bonuS == 1) {
-        if (boyscoins >= 25){
+        if (boyscoins >= 25) {
             boyscoins = boyscoins - 25;
             respondido = true;
             statusFunc();
             proximo();
         }
-    } 
+    }
     if (bonuS == 2) {
         if (boyscoins >= 40) {
+            if (cortado = false){
+            boyscoins = boyscoins - 40;
+            document.getElementById("boyscoins").innerHTML = boyscoins;
+            arrayElemt = [document.getElementById("a"), document.getElementById("b"), document.getElementById("c"), document.getElementById("d")];  
+            arraytext = [document.getElementById("a").innerHTML, document.getElementById("b").innerHTML, document.getElementById("c").innerHTML, document.getElementById("d").innerHTML];  
             
+            var indice = arraytext.indexOf(pergunt.resposta);
+            arrayElemt.splice(indice, 1);
+
+            remover1 = Math.floor(Math.random() * arrayElemt.length);
+            arrayElemt[remover1].style.cssText = 'background: transparent;' + 'color: transparent;';
+            arrayElemt.splice(remover1, 1);
+
+            remover2 = Math.floor(Math.random() * arrayElemt.length);
+            arrayElemt[remover2].style.cssText = 'background: transparent;' + 'color: transparent;';
+            arrayElemt.splice(remover2, 1);
+            cortado = true;
         }
     }
+    }
     if (bonuS == 3) {
-        if (boyscoins >= 75) {
-            
+        bonuS == 0;
+        if (dica == true) {
+            if (dicaAperta == true) {
+                var display = 'display: none;'
+                dicaAperta = false;
+            } else {
+             var display = 'display: block;'
+                dicaAperta = true;
+            }
+            document.getElementById("dicaText").style.cssText = display;
+                document.getElementById("triangulo").style.cssText = display;
+        } else {
+            if (boyscoins >= 75) {
+                boyscoins = boyscoins - 75;
+                document.getElementById("boyscoins").innerHTML = boyscoins;
+                dica = true;
+                dicaAperta = true;
+                document.getElementById("dicaText").style.cssText = 'display: block;';
+                document.getElementById("triangulo").style.cssText = 'display: block;';
+            }
         }
     }
 };
