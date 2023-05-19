@@ -42,6 +42,7 @@
     transform: translateX(-50%);
     display: grid;
     grid-template-columns: 25% 25% 25% 25%;
+    height: 100vw;
 }
 
 #a,
@@ -56,6 +57,7 @@
     width: 16.9vw;
     height: 11vw;
     margin: .75vw;
+    margin-top: 89vw;
     font-size: 1.3vw;
     font-weight: 600;
     padding: 1vw;
