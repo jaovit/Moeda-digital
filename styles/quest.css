@@ -37,7 +37,7 @@
 
 .opcoes {
     position: absolute;
-    bottom: 2.5vw;
+    bottom: 1.5vw;
     left: 50%;
     transform: translateX(-50%);
     display: grid;
@@ -68,15 +68,15 @@
 #d:hover {
     transform: scale(1.03);
     background: rgb(204, 0, 255);
-
 }
 
 .botoes::-webkit-scrollbar {
     width: .4vw;
 }
 
+
 .botoes::-webkit-scrollbar-thumb {
-    background-color: #00000085;
+    background-color: transparent;
     border-radius: 1vw;
 }
 
@@ -158,10 +158,52 @@
 
 .bonus {
     position: absolute;
-    right: 2vw;
+    right: 1.35vw;
+    top: 4vw;
     display: inline-block;
-    width: 1vw;
-    background-color: red
+    width: 4.1vw;
+    font-size: .8vw;
+    color: #ffffff;
+    text-align: center;
+}
+
+#pular, #meio_res, #dica{
+    margin: 1vw 0 .58vw 0;
+    width: 4vw;
+    height: 3vw;
+    border-radius: 100vw;
+    border: .2vw solid rgb(204, 0, 255);
+    background: black;
+    font-family: 'Montserrat', sans-serif;
+    color: orange;
+}
+
+#pular:hover, #meio_res:hover, #dica:hover{
+    transform: scale(1.05);
+}
+
+#dicaText{
+    display: none;
+    position: absolute;
+    background: black;
+    padding: 2vw 3vw 2vw 3vw;
+    width: 25vw;
+    left: 36.5vw;
+    top: 9.5vw;
+}
+
+#triangulo{
+    display: none;
+    position: absolute;
+    top: 10vw;
+    left: 64.95vw;
+    z-index: 1;
+    width: 0;
+    height: 0;
+    border-left: 2vw solid transparent;
+    border-right: 2vw solid transparent;
+    border-bottom: 4vw solid rgb(0, 0, 0);
+    transform: rotate(90deg);
 }
 
 #proximo {
