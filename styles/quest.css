@@ -62,6 +62,15 @@
     overflow: auto;
 }
 
+#a:hover,
+#b:hover,
+#c:hover,
+#d:hover {
+    transform: scale(1.03);
+    background: rgb(204, 0, 255);
+
+}
+
 .botoes::-webkit-scrollbar {
     width: .4vw;
 }
@@ -153,4 +162,21 @@
     display: inline-block;
     width: 1vw;
     background-color: red
+}
+
+#proximo {
+    position: absolute;
+    background-color: rgb(204, 0, 255);
+    color: #ffffff;
+    font-family: 'Montserrat', sans-serif;
+    border: none;
+    border-radius: .35vw;
+    font-size: 1.2vw;
+    padding: .4vw 1vw .4vw 1vw;
+    right: 1vw;
+    top: 1vw;
+}
+
+#proximo:hover{
+    transform: scale(1.05);
 }
