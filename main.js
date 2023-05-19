@@ -180,7 +180,7 @@ function bonus() {
     }
     if (bonuS == 2) {
         if (boyscoins >= 40) {
-            if (cortado = false){
+            if (cortado == false){
             boyscoins = boyscoins - 40;
             document.getElementById("boyscoins").innerHTML = boyscoins;
             arrayElemt = [document.getElementById("a"), document.getElementById("b"), document.getElementById("c"), document.getElementById("d")];  
@@ -226,6 +226,8 @@ function bonus() {
 };
 
 function iniciar() {
+     document.getElementById("dicaText").style.cssText = 'display: none;';
+     document.getElementById("triangulo").style.cssText = 'display: none;';
     nome = document.getElementById("nome").value;
     if (nome == '') {
         nome = 'Ser sem nome';
