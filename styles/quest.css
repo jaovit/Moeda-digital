@@ -150,6 +150,25 @@
     font-family: 'Montserrat', sans-serif;
     color: orange;
     font-size: 1vw;
+    text-align: center;
+}
+
+#pular > h1, #meio_res > h1, #dica > h1{
+    position: absolute;
+    left: 50%;
+    transform: translateX( -50%);
+}
+
+#pular > h1{
+    top: 1.9vw;
+}
+
+#meio_res > h1{
+    top: 12.75vw;
+}
+
+#dica > h1{
+    top: 7.25vw;
 }
 
 #pular:hover, #meio_res:hover, #dica:hover{
