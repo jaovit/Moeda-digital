@@ -13,7 +13,7 @@
 }
 
 #table {
-    margin-left: 2.9vw;
+    margin-left: 3.75vw;
     margin-top: 2vw;
     padding: 0;
 }
@@ -59,11 +59,6 @@ tr:last-child>td:nth-child(1) {
 
 tr:last-child>td:nth-child(5) {
     border-radius: 0 0 .5vw 0;
-}
-
-.td2 {
-    background: rgba(82, 82, 82, 0.411);
-    color: #000000;
 }
 
 #reniciar {
