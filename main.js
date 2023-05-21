@@ -37,9 +37,61 @@ input.addEventListener("input", function () {
     }
 });
 
+function iniciar() {
+    document.getElementById("dicaText").style.cssText = 'display: none;';
+    document.getElementById("triangulo").style.cssText = 'display: none;';
+    nome = document.getElementById("nome").value;
+    if (nome == '') {
+        nome = 'Ser sem nome';
+    }
+    if (difi == 90) {
+        document.getElementById("n-pergunt").innerHTML = '1/7';
+    } else {
+        document.getElementById("n-pergunt").innerHTML = '1/5';
+    }
+    statusFunc();
+    iniciarTemporizador();
+    if (inicioTest == true) {
+        nmData = nome;
+        inicioTest = false;
+    } else {
+        if (nmData == nome) {
+            doisJog = false;
+        } else {
+            doisJog = true;
+            stent = 1;
+            acertosTotais = 0;
+            errosTotais = 0;
+            boyscoins = 0;
+            nmData = nome;
+            statusFunc();
+        }
+    }
+
+    inicio.style.cssText =
+        'display: none;'
+        // animaçao
+        ;
+    pergunta();
+    quest.style.cssText =
+        'display: block;'
+        // animaçao
+        ;
+};
+
 function pergunta() {
-    if (npergunta == 5) {
-        return;
+    if (difi == 90) {
+        if (npergunta == 7) {
+            return;
+        };
+        pergunt = quest_m[Math.floor(Math.random() * quest_m.length)];
+        var index = quest_m.indexOf(pergunt);
+        quest_m.splice(index, 1);
+        gambiarra_m.push(pergunt);
+    } else {
+        if (npergunta == 5) {
+            return;
+        }
     }
     npergunta++;
 
@@ -50,11 +102,15 @@ function pergunta() {
         gambiarra_m.push(pergunt);
     }
     else {
-        pergunt = quest_l[Math.floor(Math.random() * quest_l.length)];
-        var index = quest_l.indexOf(pergunt);
-        quest_l.splice(index, 1);
-        gambiarra_l.push(pergunt);
-    };
+        if (difi == 20) {
+
+            pergunt = quest_l[Math.floor(Math.random() * quest_l.length)];
+            var index = quest_l.indexOf(pergunt);
+            quest_l.splice(index, 1);
+            gambiarra_l.push(pergunt);
+        };
+    }
+
     document.getElementById("quest").innerHTML = pergunt.ptexto;
     document.getElementById("dicaText").innerHTML = pergunt.dica;
 
@@ -130,15 +186,27 @@ function proximo() {
     cortado = false;
     dica = false;
     dicaAperta = false;
-    if (npergunta == 5) {
-        for (let index = 0; index < arrayElemt.length; index++) {
-            let element = arrayElemt[index];
-            element.style.cssText = 'background: ;' + 'color: #ffffff;' + 'transform: ;' + 'margin-top: 89vw;';
-            respondido = false;
-
+    if (difi == 90) {
+        if (npergunta == 7) {
+            for (let index = 0; index < arrayElemt.length; index++) {
+                let element = arrayElemt[index];
+                element.style.cssText = 'background: ;' + 'color: #ffffff;' + 'transform: ;' + 'margin-top: 89vw;';
+                respondido = false;
+            }
+            fim();
+            return;
         }
-        fim();
-        return;
+    } else {
+        if (npergunta == 5) {
+            for (let index = 0; index < arrayElemt.length; index++) {
+                let element = arrayElemt[index];
+                element.style.cssText = 'background: ;' + 'color: #ffffff;' + 'transform: ;' + 'margin-top: 89vw;';
+                respondido = false;
+
+            }
+            fim();
+            return;
+        }
     }
     if (respondido == true) {
         for (let index = 0; index < arrayElemt.length; index++) {
@@ -147,7 +215,11 @@ function proximo() {
         }
         pergunta();
         respondido = false;
-        document.getElementById("n-pergunt").innerHTML = npergunta + '/5';
+        if (difi == 90) {
+            document.getElementById("n-pergunt").innerHTML = npergunta + '/7';
+        } else {
+            document.getElementById("n-pergunt").innerHTML = npergunta + '/5';
+        }
     } else {
 
     }
@@ -234,43 +306,6 @@ function statusFunc() {
     document.getElementById("acertos").innerHTML = acertos;
 }
 
-function iniciar() {
-    document.getElementById("dicaText").style.cssText = 'display: none;';
-    document.getElementById("triangulo").style.cssText = 'display: none;';
-    nome = document.getElementById("nome").value;
-    if (nome == '') {
-        nome = 'Ser sem nome';
-    }
-    statusFunc();
-    iniciarTemporizador();
-    if (inicioTest == true) {
-        nmData = nome;
-        inicioTest = false;
-    } else {
-        if (nmData == nome) {
-            doisJog = false;
-        } else {
-            doisJog = true;
-            stent = 1;
-            acertosTotais = 0;
-            errosTotais = 0;
-            boyscoins = 0;
-            nmData = nome;
-            statusFunc();
-        }
-    }
-
-    inicio.style.cssText =
-        'display: none;'
-        // animaçao
-        ;
-    pergunta();
-    quest.style.cssText =
-        'display: block;'
-        // animaçao
-        ;
-};
-
 function table() {
     formatarNum();
 
@@ -290,7 +325,7 @@ function table() {
     td_acertos.innerText = acertos;
     td_erros.innerText = erros;
 
- 
+
     if (doisJog == true) {
         document.getElementById("tr").id = 'sla';
         td_rodada.style.cssText = 'border-top: .1vw solid rgb(204, 0, 255);';
@@ -303,7 +338,7 @@ function table() {
         if (stent > 1) {
             if (stent > 2) {
                 document.getElementById("tr").remove();
-        
+
             }
             var trTotal = tbod.insertRow();
             trTotal.id = "tr";

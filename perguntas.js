@@ -251,7 +251,7 @@ var quest_l = [
      'São moedas kryptonianas',
      'sla'], 
      resposta: 'É um tipo de dinheiro, sendo totalmente digital',
-     dica: 'São moedas digitais' },
+     dica: 'Não são moedas kryptonianas' },
 
     { ptexto: 'O que é a mineração de criptomoedas?', 
     opcoes: ['O processo de gerar novas unidades de criptomoedas', 
