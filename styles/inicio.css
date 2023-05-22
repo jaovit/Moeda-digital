@@ -56,6 +56,7 @@
     background: rgb(0, 0, 0);
     border: solid .075vw rgb(204, 0, 255);
     border-radius: .35vw;
+    text-align: center;
 }
 
 .ed{
