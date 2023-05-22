@@ -30,6 +30,7 @@ var arraytext;
 var remover1;
 var remover2;
 var cortado = false;
+var gambiarra2 = -2;
 
 input.addEventListener("input", function () {
     if (input.value.length > limiteCaracteres) {
@@ -38,6 +39,7 @@ input.addEventListener("input", function () {
 });
 
 function iniciar() {
+    gambiarra2++;
     document.getElementById("dicaText").style.cssText = 'display: none;';
     document.getElementById("triangulo").style.cssText = 'display: none;';
     nome = document.getElementById("nome").value;
@@ -327,7 +329,8 @@ function table() {
 
 
     if (doisJog == true) {
-        document.getElementById("tr").id = 'sla';
+        if (gambiarra2 > 0){
+        document.getElementById("tr").id = 'sla';}
         td_rodada.style.cssText = 'border-top: .1vw solid rgb(204, 0, 255);';
         td_jovem.style.cssText = 'border-top: .1vw solid rgb(204, 0, 255);';
         td_boys.style.cssText = 'border-top: .1vw solid rgb(204, 0, 255);';
