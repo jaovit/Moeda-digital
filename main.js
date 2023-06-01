@@ -181,13 +181,22 @@ function res(rel, elemento) {
     statusFunc();
 };
 
+document.addEventListener("keypress", function (e) {
+    if (e.key === 'a' || 'b' || 'k' || 'f' || 'p' || 'P') {
+        proximo();
+    } 
+})
+
 function proximo() {
+    if (respondido == true) {
     document.getElementById("dicaText").style.cssText = 'display: none;';
     document.getElementById("triangulo").style.cssText = 'display: none;';
     arrayElemt = [document.getElementById("a"), document.getElementById("b"), document.getElementById("c"), document.getElementById("d")];
     cortado = false;
     dica = false;
     dicaAperta = false;
+    }
+    if (respondido == true) { 
     if (difi == 90) {
         if (npergunta == 7) {
             for (let index = 0; index < arrayElemt.length; index++) {
@@ -210,6 +219,8 @@ function proximo() {
             return;
         }
     }
+}
+
     if (respondido == true) {
         for (let index = 0; index < arrayElemt.length; index++) {
             let element = arrayElemt[index];
@@ -225,6 +236,7 @@ function proximo() {
     } else {
 
     }
+    respondido = false;
 };
 
 function bonus() {
@@ -329,8 +341,9 @@ function table() {
 
 
     if (doisJog == true) {
-        if (gambiarra2 > 0){
-        document.getElementById("tr").id = 'sla';}
+        if (gambiarra2 > 0) {
+            document.getElementById("tr").id = 'sla';
+        }
         td_rodada.style.cssText = 'border-top: .1vw solid rgb(204, 0, 255);';
         td_jovem.style.cssText = 'border-top: .1vw solid rgb(204, 0, 255);';
         td_boys.style.cssText = 'border-top: .1vw solid rgb(204, 0, 255);';
