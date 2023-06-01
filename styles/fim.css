@@ -62,7 +62,8 @@ tr:last-child>td:nth-child(5) {
 }
 
 #reniciar {
-    margin-top: 1vw;
+    position: absolute;
+    top: -1.5vw;
     margin-left: 18.75vw;
     width: 12.5vw;
     height: 3vw;
